@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     qtyPlus.addEventListener('click', () => {
         const val = parseInt(qtyInput.value) || 1;
-        if (val < 10) {
+        if (val < 3) {
             qtyInput.value = val + 1;
             updatePrice();
         }
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     qtyInput.addEventListener('change', () => {
         let val = parseInt(qtyInput.value) || 1;
-        val = Math.max(1, Math.min(10, val));
+        val = Math.max(1, Math.min(3, val));
         qtyInput.value = val;
         updatePrice();
     });
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- SCROLL REVEAL ---
     const revealElements = document.querySelectorAll(
-        '.feature-card, .review-card, .ps-card, .trust-item, .section-header, .buy-grid, .faq-item'
+        '.feature-card, .review-card, .ps-card, .trust-item, .section-header, .buy-grid, .faq-item, .spec-card, .step-card, .compat-card'
     );
 
     revealElements.forEach(el => el.classList.add('reveal'));
