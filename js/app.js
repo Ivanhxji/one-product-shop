@@ -160,11 +160,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5000);
     }
 
-    // --- THUMBNAIL CLICK (demo) ---
+    // --- THUMBNAIL CLICK — switch main product image ---
+    const buyMainImg = document.getElementById('buyMainImg');
     document.querySelectorAll('.thumb').forEach(thumb => {
         thumb.addEventListener('click', () => {
             document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
             thumb.classList.add('active');
+            if (buyMainImg && thumb.dataset.img) {
+                buyMainImg.src = thumb.dataset.img;
+            }
         });
     });
 
