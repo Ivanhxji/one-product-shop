@@ -942,6 +942,26 @@ ul { list-style: none; }
     color: var(--text-secondary);
 }
 
+/* --- VIDEO SECTION --- */
+.video-section {
+    padding: var(--section-pad) 0;
+    background: var(--bg-alt);
+}
+
+.video-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background: #000;
+}
+
+.video-wrapper video {
+    width: 100%;
+    display: block;
+}
+
 /* --- HERO SPECS (quick specs bar in hero) --- */
 .hero-specs {
     display: flex;
