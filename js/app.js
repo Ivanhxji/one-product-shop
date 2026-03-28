@@ -98,14 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
         updatePrice();
     });
 
-    // --- BUY BUTTON (demo) ---
+    // --- BUY BUTTON → open checkout ---
     buyBtn.addEventListener('click', () => {
-        buyBtn.innerHTML = `Added to Cart! &#10003;<span class="btn-subtext">Redirecting to checkout...</span>`;
-        buyBtn.style.background = '#27ae60';
-        setTimeout(() => {
-            buyBtn.style.background = '';
-            updatePrice();
-        }, 2000);
+        if (typeof openCheckout === 'function') {
+            openCheckout();
+        }
     });
 
     // --- SCROLL REVEAL ---
