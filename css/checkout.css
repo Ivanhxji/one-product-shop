@@ -176,6 +176,8 @@
     font-family: var(--font);
     transition: var(--transition);
     background: var(--bg);
+    color: var(--text);
+    -webkit-appearance: none;
 }
 
 .form-group input:focus,

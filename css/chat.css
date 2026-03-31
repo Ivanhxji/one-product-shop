@@ -110,10 +110,17 @@
     pointer-events: all;
 }
 
+@media (max-width: 768px) {
+    .chat-panel {
+        max-height: 420px;
+    }
+}
+
 @media (max-width: 400px) {
     .chat-panel {
         width: calc(100vw - 32px);
         right: 0;
+        max-height: 380px;
     }
 }
 
