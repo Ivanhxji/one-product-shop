@@ -259,123 +259,42 @@
         </div>
     </section>
 
-    <!-- EXPLODED VIEW — 3D Inside the Hardware -->
-    <section class="exploded-section" id="features">
-        <div class="exploded-canvas-wrap">
-            <canvas id="explodedCanvas"></canvas>
-        </div>
-        <div class="container" style="position:relative;z-index:2;pointer-events:none;">
-            <div class="section-header" style="padding-top:40px;">
-                <span class="section-tag">Inside the Hardware</span>
-                <h2>Every component. <span class="gradient-text">Engineered to perform.</span></h2>
+    <!-- HOW IT WORKS — 3 steps -->
+    <section class="how-it-works" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Setup in 30 seconds</span>
+                <h2>Plug in. Connect. <span class="gradient-text">Drive wireless.</span></h2>
+                <p>No apps. No Bluetooth pairing. No touching your phone while driving.</p>
+            </div>
+            <div class="hiw-grid">
+                <div class="hiw-step">
+                    <div class="hiw-number">1</div>
+                    <div class="hiw-icon">🔌</div>
+                    <h3>Plug into USB port</h3>
+                    <p>Insert AutoLink Pro into your car's factory USB port. Works with any car that has wired CarPlay or Android Auto.</p>
+                </div>
+                <div class="hiw-arrow">→</div>
+                <div class="hiw-step">
+                    <div class="hiw-number">2</div>
+                    <div class="hiw-icon">📱</div>
+                    <h3>Connect phone once</h3>
+                    <p>First use only: connect your phone via Bluetooth. AutoLink Pro memorizes it — no re-pairing ever again.</p>
+                </div>
+                <div class="hiw-arrow">→</div>
+                <div class="hiw-step">
+                    <div class="hiw-number">3</div>
+                    <div class="hiw-icon">🚗</div>
+                    <h3>Auto-connects every drive</h3>
+                    <p>Get in the car, CarPlay or Android Auto launches automatically on your screen within 5 seconds. Every time.</p>
+                </div>
+            </div>
+            <div class="hiw-note">
+                <span>✓ Works with iPhone & Android</span>
+                <span>✓ 99% of cars with factory CarPlay</span>
+                <span>✓ No app required</span>
             </div>
         </div>
-
-        <!-- HIDDEN old stage — replaced by canvas -->
-        <div class="exploded-stage" style="display:none;">
-            <div class="ex-labels ex-labels-left">
-                    <div class="ex-label" id="lbl2">
-                        <div class="ex-label-content">
-                            <strong>WiFi6 Dual-Band Antenna</strong>
-                            <span>802.11ax · 2.4 + 5.8GHz</span>
-                        </div>
-                        <div class="ex-label-line"></div>
-                    </div>
-                    <div class="ex-label" id="lbl4">
-                        <div class="ex-label-content">
-                            <strong>4-Layer PCB</strong>
-                            <span>FR4 · Gold traces · BT 5.4</span>
-                        </div>
-                        <div class="ex-label-line"></div>
-                    </div>
-                    <div class="ex-label" id="lbl6">
-                        <div class="ex-label-content">
-                            <strong>CNC Bottom Housing</strong>
-                            <span>Precision-matched alloy</span>
-                        </div>
-                        <div class="ex-label-line"></div>
-                    </div>
-                </div>
-
-                <!-- 3D Scene — real component photos -->
-                <div class="exploded-scene" id="explodedScene">
-
-                    <!-- L1: Top shell — pure 3D (rendered by Three.js) -->
-                    <div class="ex-layer" id="exL1"></div>
-
-                    <!-- L2: Main PCB — real WiFi adapter board -->
-                    <div class="ex-layer" id="exL2">
-                        <div class="ex-photo-wrap eph-pcb">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Siemens_Gigaset_USB_Adapter_54_-_board-0311.jpg" alt="Main PCB" class="ex-photo" style="object-position:center 40%;">
-                            <div class="ex-photo-overlay epo-green"></div>
-                            <span class="ex-photo-badge">Main PCB · 4-Layer FR4</span>
-                        </div>
-                    </div>
-
-                    <!-- L3: WiFi+BT Combo SoC — Broadcom BCM chip photo -->
-                    <div class="ex-layer" id="exL3">
-                        <div class="ex-photo-wrap eph-chip">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Broadcom_BCM94313HMGB-7795.jpg" alt="WiFi BT SoC" class="ex-photo" style="object-position:center 20%;">
-                            <div class="ex-photo-overlay epo-blue"></div>
-                            <span class="ex-photo-badge">WiFi6 + BT 5.4 SoC</span>
-                        </div>
-                    </div>
-
-                    <!-- L4: Flash Memory chip — Winbond W25Q -->
-                    <div class="ex-layer" id="exL4">
-                        <div class="ex-photo-wrap eph-flash">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Netgear_GS108E_-_board_-_Winbond_25Q16JVSIQ-1328.jpg" alt="Flash memory" class="ex-photo" style="object-position:center center;">
-                            <div class="ex-photo-overlay epo-dark"></div>
-                            <span class="ex-photo-badge">NAND Flash · 128MB</span>
-                        </div>
-                    </div>
-
-                    <!-- L5: USB-A Connector — gold pins closeup -->
-                    <div class="ex-layer" id="exL5">
-                        <div class="ex-photo-wrap eph-usb">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/USB_TypeA_Plug.JPG" alt="USB connector" class="ex-photo" style="object-position:center 55%;">
-                            <div class="ex-photo-overlay epo-gold"></div>
-                            <span class="ex-photo-badge">Gold-Plated USB-A</span>
-                        </div>
-                    </div>
-
-                    <!-- L6: Bottom housing — CSS metallic -->
-                    <div class="ex-layer" id="exL6">
-                        <div class="ex-body shell-bottom">
-                            <div class="usba-hole"></div>
-                            <div class="usbc-hole"></div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Right labels -->
-                <div class="ex-labels ex-labels-right">
-                    <div class="ex-label" id="lbl1">
-                        <div class="ex-label-line"></div>
-                        <div class="ex-label-content">
-                            <strong>Aluminum Alloy Shell</strong>
-                            <span>CNC-machined · Heat optimized</span>
-                        </div>
-                    </div>
-                    <div class="ex-label" id="lbl3">
-                        <div class="ex-label-line"></div>
-                        <div class="ex-label-content">
-                            <strong>8-Core ARM SoC</strong>
-                            <span>1.8GHz · OTA updates</span>
-                        </div>
-                    </div>
-                    <div class="ex-label" id="lbl5">
-                        <div class="ex-label-line"></div>
-                        <div class="ex-label-content">
-                            <strong>Gold-Plated Connectors</strong>
-                            <span>USB-A + USB-C · 10k cycles</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div><!-- /exploded-stage hidden -->
-        </div><!-- /container -->
     </section>
 
     <!-- COMPATIBILITY CHECKER -->
@@ -850,8 +769,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="js/exploded.js"></script>
     <script src="js/orders.js"></script>
     <script src="js/app.js"></script>
     <script src="js/chat.js"></script>
