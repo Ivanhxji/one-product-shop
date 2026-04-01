@@ -176,12 +176,20 @@ function initCheckoutEvents() {
         };
 
         try {
-            const response = await fetch(GOOGLE_SHEETS_URL, {
+            // Save to Google Sheets
+            await fetch(GOOGLE_SHEETS_URL, {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(orderData)
             });
+
+            // Notify n8n → Telegram (fire and forget)
+            fetch('https://maliutin.app.n8n.cloud/webhook/new-order', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(orderData)
+            }).catch(() => {});
 
             // Show success (no-cors = opaque response, so we assume success)
             form.style.display = 'none';
