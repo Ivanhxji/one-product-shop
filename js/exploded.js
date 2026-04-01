@@ -7,8 +7,11 @@
 (function () {
     'use strict';
 
-    window.addEventListener('load', function () {
-        if (typeof THREE === 'undefined') return;
+    function init() {
+        if (typeof THREE === 'undefined') {
+            setTimeout(init, 200); // retry if Three.js not ready yet
+            return;
+        }
 
         const canvas = document.getElementById('explodedCanvas');
         if (!canvas) return;
@@ -513,5 +516,14 @@
             camera.updateProjectionMatrix();
             renderer.setSize(W, H);
         });
-    });
+    }
+
+    // Run immediately — scripts at bottom of body, DOM is ready
+    // If Three.js CDN not ready yet, init() retries every 200ms
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+
 })();
