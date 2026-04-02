@@ -306,11 +306,43 @@ ul { list-style: none; }
     margin-top: 4px;
 }
 
-/* --- HERO — stays dark, explicit white text overrides --- */
+/* --- HERO — fullscreen background image --- */
 .hero {
-    padding: 60px 0 80px;
-    background: linear-gradient(180deg, #16213e 0%, #0f0f1a 100%);
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     color: #ffffff;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, rgba(10,10,20,0.82) 0%, rgba(10,10,20,0.55) 55%, rgba(10,10,20,0.15) 100%);
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 1;
+    padding: 120px 0 80px;
+}
+
+.hero-content {
+    max-width: 580px;
 }
 .hero .hero-title { color: #ffffff; }
 .hero .hero-subtitle { color: rgba(255,255,255,0.65); }
@@ -328,6 +360,7 @@ ul { list-style: none; }
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
+    display: none;
 }
 
 .hero-badge {
