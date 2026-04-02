@@ -19,7 +19,7 @@ function createCheckoutModal() {
             <div class="checkout-left">
                 <h2>Order Summary</h2>
                 <div class="checkout-product">
-                    <div class="checkout-product-icon">&#128663;</div>
+                    <img src="img/product-ai-1.png" alt="AutoLink Pro" class="checkout-product-icon">
                     <div>
                         <strong>AutoLink Pro</strong>
                         <span>Wireless CarPlay & Android Auto</span>

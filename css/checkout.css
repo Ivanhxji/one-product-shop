@@ -87,7 +87,11 @@
 }
 
 .checkout-product-icon {
-    font-size: 32px;
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
 }
 
 .checkout-product strong {
